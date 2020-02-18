@@ -21,7 +21,8 @@ func = {
     r"\\tan": r"\tan ",
     r"\\cot": r"\cot ",
     r"\\min": r"\min ",
-    r"\\max": r"\max "
+    r"\\max": r"\max ",
+    r"arc\tan ": r"\arctan "
 }
 
 greek = {
@@ -30,7 +31,11 @@ greek = {
     r"\beta": "β",
     r"\pi": "π",
     r"\psi": "ψ",
-    r"\lambda": "λ"
+    r"\lambda": "λ",
+    r"\partial": "∂",
+    r"\gamma": "γ",
+    r"\omega": "ω",
+    r"\Omega": "Ω",
 }
 
 bracket = {
@@ -50,6 +55,7 @@ symbol = {
     r"\int": "∫",
     r"\neq": "≠",
     r"\sum": "∑",
+    r"\cdot": "⋅",
     # r"\leq": "⩽",
     # r"\le": "⩽",
     #  r"\geq": "⩾",
