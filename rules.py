@@ -32,6 +32,7 @@ greek = {
     r"\gamma": "γ",
     r"\omega": "ω",
     r"\Omega": "Ω",
+    r"\Delta": "Δ",
 }
 
 bracket = {
