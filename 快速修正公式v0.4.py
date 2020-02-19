@@ -11,10 +11,10 @@ l = "".join(l)  # 得到一串
 
 l = replace_dollar_tex(l)
 # print(l)
-imath_start = [i for i in range(len(l)) if l.startswith(r"[imath]", i)]
-imath_end = [i for i in range(len(l)) if l.startswith(r"[/imath]", i)]
-dmath_start = [i for i in range(len(l)) if l.startswith(r"[dmath]", i)]
-dmath_end = [i for i in range(len(l)) if l.startswith(r"[/dmath]", i)]
+imath_start = [i for i in range(len(l)) if l.startswith(r"+imath+", i)]
+imath_end = [i for i in range(len(l)) if l.startswith(r"+/imath+", i)]
+dmath_start = [i for i in range(len(l)) if l.startswith(r"+dmath+", i)]
+dmath_end = [i for i in range(len(l)) if l.startswith(r"+/dmath+", i)]
 
 for i in range(len(imath_start)):
     imath_start[i] += 7
@@ -39,15 +39,17 @@ for i in pos:
     l = l.replace(l[i[0]: i[1]], temp)
 
 l = l.replace(
-    r"[imath]", r"$").replace(
-    r"[/imath]", r"$").replace(
-        r"[dmath]", r"$$").replace(
-        r"[/dmath]", r"$$").replace(
-            r"[/imath\right]", r"$").replace(r"[imath\right]", r"$").replace(r"[dmath\right]", r"$$").replace(r"[/dmath\right]", r"$$")
+    r"+imath+", r"$")
+l = l.replace(
+    r"+/imath+", r"$")
+l = l.replace(
+    r"+dmath+", r"$$")
+l = l.replace(
+    r"+/dmath+", r"$$")
 
 while "  " in l:
     l = l.replace("  ", " ")
 
 print(l)
 
-# pyperclip.copy(l)
+pyperclip.copy(l)

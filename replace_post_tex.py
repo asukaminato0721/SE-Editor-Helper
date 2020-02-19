@@ -29,12 +29,12 @@ def replace_dollar_tex(s):
                     # (close dollar)
                     stack = 0
                     # print('single: %s' % s[j:i])
-                    new_txt += '[imath]%s[/imath]' % s[j:i]
+                    new_txt += '+imath+%s+/imath+' % s[j:i]  # 更改定界符
             else:  # stack == 2
                 # first close dollar
                 stack = 0
                 # print('double: %s' % s[j:i])
-                new_txt += '[dmath]%s[/dmath]' % s[j:i]
+                new_txt += '+dmath+%s+/dmath+' % s[j:i]  # 更改定界符
                 # skip the second close dollar
                 i += 1
         elif stack == 0:
