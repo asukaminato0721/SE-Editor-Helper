@@ -6,6 +6,7 @@ func = {
     "tan": r"\tan ",
     "cot": r"\cot ",
     "sec": r"\sec ",
+    "csc": r"\csc ",
     "min": r"\min ",
     "max": r"\max ",
     "exp": r"\exp ",
@@ -18,7 +19,8 @@ func = {
     r"\\min": r"\min ",
     r"\\max": r"\max ",
     r"arc\tan ": r"\arctan ",
-    r"\\exp": r"\exp "
+    r"\\exp": r"\exp ",
+    r"\\csc": r"\csc "
 }
 
 greek = {
@@ -54,6 +56,9 @@ symbol = {
     r"\sum": "∑",
     r"\cdot": "⋅",
     r"\pm": "±",
+    r"\infty": "∞",
+    r"\in ": "∈",
+    r"\implies": "⟹",
     # r"\leq": "⩽",
     # r"\le": "⩽",
     #  r"\geq": "⩾",
