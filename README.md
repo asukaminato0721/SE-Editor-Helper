@@ -26,9 +26,13 @@ mse 有 edit 别人答案的功能，由于自带的编辑器功能很弱，所�
 
 ## Updating Record
 
+### version 0.5
+
+实现了最长匹配。在 `$$ $$` 内不能匹配 `\\` ，不然就出错。
+
 ### version 0.4
 
-感谢 [这位开发者](https://github.com/t-k-) 提供的脚本 `replace_post_tex` , 增强了转化效果，可匹配多行公式
+感谢 [这位开发者](https://github.com/t-k-) 提供的脚本 `replace_post_tex` , 增强了转化效果，可匹配多行公式。（TODO：最长匹配（如匹配了 `arcsin` 就不再匹配 `sin`））
 
 因为不会正则，删去了正则相关内容
 
