@@ -18,26 +18,19 @@ mse 有 edit 别人答案的功能，由于自带的编辑器功能很弱，所�
 
 1. 单行 `$formula$` 直接匹配
 2. 单行 `$$formula$$` 直接匹配
+3. 多行 `$$formula$$` 直接匹配
 
 ## TODO
 
-- [ ] 匹配形如
-
-    ```latex
-    $$sinx\\
-    cosx
-    $$
-    ```
-
-    的公式，并修改为
-
-    ```latex
-    $$\sin x\\
-    \cos x
-    $$
-    ```
+- [ ] 最长匹配（如匹配了 `arcsin` 就不再匹配 `sin`）
 
 ## Updating Record
+
+### version 0.4
+
+感谢 [这位开发者](https://github.com/t-k-) 提供的脚本 `replace_post_tex` , 增强了转化效果，可匹配多行公式
+
+因为不会正则，删去了正则相关内容
 
 ### version 0.3
 
@@ -52,11 +45,3 @@ mse 有 edit 别人答案的功能，由于自带的编辑器功能很弱，所�
 暴力匹配，在一个指定 txt 里完成替换
 
 ## PR is welcomed
-
-## Problem
-
-for example:
-
-```tex
-    sinh can be either \sinh or \sin h
-```
