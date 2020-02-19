@@ -10,7 +10,7 @@ l = pyperclip.paste()
 l = "".join(l)  # 得到一串
 
 l = replace_dollar_tex(l)
-print(l)
+# print(l)
 imath_start = [i for i in range(len(l)) if l.startswith(r"[imath]", i)]
 imath_end = [i for i in range(len(l)) if l.startswith(r"[/imath]", i)]
 dmath_start = [i for i in range(len(l)) if l.startswith(r"[dmath]", i)]
@@ -43,11 +43,11 @@ l = l.replace(
     r"[/imath]", r"$").replace(
         r"[dmath]", r"$$").replace(
         r"[/dmath]", r"$$").replace(
-            r"[/dmath\right]", r"$$")
+            r"[/imath\right]", r"$").replace(r"[imath\right]", r"$").replace(r"[dmath\right]", r"$$").replace(r"[/dmath\right]", r"$$")
 
 while "  " in l:
     l = l.replace("  ", " ")
 
 print(l)
 
-pyperclip.copy(l)
+# pyperclip.copy(l)

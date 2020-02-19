@@ -20,7 +20,8 @@ func = {
     r"\\max": r"\max ",
     r"arc\tan ": r"\arctan ",
     r"\\exp": r"\exp ",
-    r"\\csc": r"\csc "
+    r"\\csc": r"\csc ",
+    r"\\arctan": r"\arctan "
 }
 
 greek = {
