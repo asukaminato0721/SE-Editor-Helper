@@ -58,6 +58,7 @@ symbol = {
     r"\int": "∫",
     r"\neq": "≠",
     r"\sum": "∑",
+    r"\cdots": "⋯",
     r"\cdot": "⋅",
     r"\pm": "±",
     r"\infty": "∞",
