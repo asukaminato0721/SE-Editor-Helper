@@ -12,7 +12,7 @@ func = {
     "max": r"\max ",
     "exp": r"\exp ",
     "sup": r"\sup",
-    "inf": r"\inf",
+    #    "inf": r"\inf",
     r"\\sin": r"\sin ",
     r"\\cos": r"\cos ",
     r"\\ln": r"\ln ",

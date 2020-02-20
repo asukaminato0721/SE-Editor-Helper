@@ -1,4 +1,4 @@
-# 写不来正则，暴力匹配算了
+# I can't write regular, so I write violent matching
 
 from replace_post_tex import replace_dollar_tex
 from rules import repl
@@ -25,10 +25,10 @@ for i in range(len(dmath_start)):
 imath_pos = list(zip(imath_start, imath_end))
 dmath_pos = list(zip(dmath_start, dmath_end))
 
-pos = imath_pos+dmath_pos  # 找出公式位置
+pos = imath_pos+dmath_pos  # Finding formula positions
 
 pos.sort()
-pos.reverse()  # 逆序，这样改了后面的不会影响到前面的
+pos.reverse()  # Reverse order, so changing the back will not affect the previous
 # print(pos)
 
 for i in pos:
