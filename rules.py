@@ -42,14 +42,14 @@ greek = {
 }
 
 bracket = {
-    "(": r"\left(",
-    ")": r"\right)",  # 小括号匹配
-    "[": r"\left[",
-    "]": r"\right]",  # 中
-    r"\{": r"\left\{",
-    r"\}": r"\right\}",  # 大
-    r"\left\left": r"\left",
-    r"\right\right": r"\right",
+    #  "(": r"\left(",
+    #   ")": r"\right)",  # 小括号匹配
+    #  "[": r"\left[",
+    #  "]": r"\right]",  # 中
+    #  r"\{": r"\left\{",
+    #  r"\}": r"\right\}",  # 大
+    #   r"\left\left": r"\left",
+    #   r"\right\right": r"\right",
 }
 
 symbol = {
