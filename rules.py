@@ -12,6 +12,8 @@ func = {
     "max": r"\max ",
     "exp": r"\exp ",
     "sup": r"\sup",
+    "lim": r"\lim ",
+    r"\\lim": r"\lim ",
     #    "inf": r"\inf",
     r"\\sin": r"\sin ",
     r"\\cos": r"\cos ",
