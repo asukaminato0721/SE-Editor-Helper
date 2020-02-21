@@ -1,10 +1,10 @@
 # MSE Quick Fix Formula Script
 
-[中文版]()
+[中文版](https://github.com/wuyudi/SE-Editor-Helper/blob/master/README_zh_CN.md)
 
 MathStackExchange has a function to edit other people's answers. Because the built-in editor function is sort of weak, it is very laborious to modify the formula. So I wrote this script.
 
-> mathematica stack exchange has this [脚本](https://github.com/halirutan/SE-Editor-Buttons), But only for Mathematica users
+> mathematica stack exchange has this [script](https://github.com/halirutan/SE-Editor-Buttons), But only for Mathematica users
 
 ## Require
 
