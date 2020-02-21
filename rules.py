@@ -28,17 +28,18 @@ func = {
 }
 
 greek = {
-    r"\theta": "θ",
-    r"\alpha": "α",
-    r"\beta": "β",
-    r"\pi": "π",
-    r"\psi": "ψ",
-    r"\lambda": "λ",
-    r"\partial": "∂",
-    r"\gamma": "γ",
-    r"\omega": "ω",
-    r"\Omega": "Ω",
-    r"\Delta": "Δ",
+    #     r"\theta": "θ",
+    #     r"\alpha": "α",
+    #     r"\beta": "β",
+    #     r"\pi": "π",
+    #     r"\psi": "ψ",
+    #     r"\lambda": "λ",
+    #     r"\partial": "∂",
+    #     r"\gamma": "γ",
+    #     r"\omega": "ω",
+    #     r"\Omega": "Ω",
+    #     r"\Delta": "Δ",
+    #     r"\delta": "δ",
 }
 
 bracket = {
@@ -53,21 +54,21 @@ bracket = {
 }
 
 symbol = {
-    r"\to": "→",
-    r"\rightarrow": "→",
-    r"\int": "∫",
-    r"\neq": "≠",
-    r"\sum": "∑",
-    r"\cdots": "⋯",
-    r"\cdot": "⋅",
-    r"\pm": "±",
-    r"\infty": "∞",
-    r"\in ": "∈",
-    r"\implies": "⟹",
-    # r"\leq": "⩽",
-    # r"\le": "⩽",
-    #  r"\geq": "⩾",
-    #  r"\ge": "⩾"
+    #     r"\to": "→",
+    #     r"\rightarrow": "→",
+    #     r"\int": "∫",
+    #     r"\neq": "≠",
+    #     r"\sum": "∑",
+    #     r"\cdots": "⋯",
+    #     r"\cdot": "⋅",
+    #     r"\pm": "±",
+    #     r"\infty": "∞",
+    #     r"\in ": "∈",
+    #     r"\implies": "⟹",
+    #     # r"\leq": "⩽",
+    #     # r"\le": "⩽",
+    #     #  r"\geq": "⩾",
+    #     #  r"\ge": "⩾"
 }
 
 repl = [func, greek, bracket, symbol]

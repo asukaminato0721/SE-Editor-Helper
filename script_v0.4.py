@@ -1,51 +1,73 @@
 # I can't write regular, so I write violent matching
 
-from replace_post_tex import replace_dollar_tex
+# from replace_post_tex import replace_dollar_tex
 from rules import repl
-import re
+# import re
 import pyperclip
 
 # l = "$sinx+cosx$+$$tanx$$\n+$tanx$"
 l = pyperclip.paste()
 l = "".join(l)  # 得到一串
 
-l = replace_dollar_tex(l)
-# print(l)
-imath_start = [i for i in range(len(l)) if l.startswith(r"+imath+", i)]
-imath_end = [i for i in range(len(l)) if l.startswith(r"+/imath+", i)]
-dmath_start = [i for i in range(len(l)) if l.startswith(r"+dmath+", i)]
-dmath_end = [i for i in range(len(l)) if l.startswith(r"+/dmath+", i)]
 
-for i in range(len(imath_start)):
-    imath_start[i] += 7
-
-for i in range(len(dmath_start)):
-    dmath_start[i] += 7
-
-imath_pos = list(zip(imath_start, imath_end))
-dmath_pos = list(zip(dmath_start, dmath_end))
-
-pos = imath_pos+dmath_pos  # Finding formula positions
-
-pos.sort()
-pos.reverse()  # Reverse order, so changing the back will not affect the previous
-# print(pos)
-
-for i in pos:
-    temp = l[i[0]: i[1]]
+def refine(s: str) -> str:
+    temp = s
     for j in repl:
         for k in j:
             temp = temp.replace(k, j[k])
-    l = l.replace(l[i[0]: i[1]], temp)
+    return temp
 
-l = l.replace(
-    r"+imath+", r"$")
-l = l.replace(
-    r"+/imath+", r"$")
-l = l.replace(
-    r"+dmath+", r"$$")
-l = l.replace(
-    r"+/dmath+", r"$$")
+
+def replace_dollar_tex(s: str) -> str:
+    l = len(s)
+    i, j, stack = 0, 0, 0
+    new_txt = []
+    while i < l:
+        if s[i] == "\\" and (i + 1) < l:  # 读到 \$ 的判断
+            if s[i + 1] == '$':
+                # skip if it is escaped dollar
+                new_txt += '$'
+                i += 1
+            elif stack == 0:
+                # otherwise just copy it
+                new_txt += s[i]
+        elif s[i] == '$':
+            if stack == 0:  # first open dollar
+                stack = 1
+                j = i + 1
+            elif stack == 1:  # second dollar
+                if i == j:
+                    # consecutive dollar
+                    # (second open dollar)
+                    stack = 2
+                    j = i + 1
+                else:
+                    # non-consecutive dollar
+                    # (close dollar)
+                    stack = 0
+                    # print('single: %s' % s[j:i])
+                    new_txt.append(r"$"),
+                    new_txt.append(refine(s[j: i]))
+                    new_txt.append(r"$")    # 更改定界符
+            else:  # stack == 2
+                # first close dollar
+                stack = 0
+                # print('double: %s' % s[j:i])
+                new_txt.append(r"$$"),
+                new_txt.append(refine(s[j: i]))
+                new_txt.append(r"$$")    # 更改定界符
+                # skip the second close dollar
+                i += 1
+        elif stack == 0:
+            # non-escaped and non enclosed characters
+            new_txt += s[i]
+        i += 1
+    return "".join(new_txt)
+
+
+l = replace_dollar_tex(l)
+# print(l)
+
 
 while "  " in l:
     l = l.replace("  ", " ")
