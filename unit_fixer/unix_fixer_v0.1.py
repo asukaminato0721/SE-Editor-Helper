@@ -6,7 +6,7 @@ github:https://github.com/HydrogenDeuterium
 """
 import pyperclip
 
-unitlist = ["kg", "sec", "mm"]
+unitlist = ["kg", "sec", "mm", "meter"]
 
 i = pyperclip.paste()
 

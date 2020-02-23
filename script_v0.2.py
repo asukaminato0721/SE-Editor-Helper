@@ -1,4 +1,5 @@
 import pyperclip
+
 from rules import repl
 
 l = pyperclip.paste()
