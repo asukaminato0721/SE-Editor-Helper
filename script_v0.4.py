@@ -1,9 +1,10 @@
 # I can't write regular, so I write violent matching
 
-# from replace_post_tex import replace_dollar_tex
-from rules import repl
 # import re
 import pyperclip
+
+# from replace_post_tex import replace_dollar_tex
+from rules import repl
 
 # l = "$sinx+cosx$+$$tanx$$\n+$tanx$"
 l = pyperclip.paste()
@@ -48,14 +49,14 @@ def replace_dollar_tex(s: str) -> str:
                     # print('single: %s' % s[j:i])
                     new_txt.append(r"$"),
                     new_txt.append(refine(s[j: i]))
-                    new_txt.append(r"$")    # 更改定界符
+                    new_txt.append(r"$")  # 更改定界符
             else:  # stack == 2
                 # first close dollar
                 stack = 0
                 # print('double: %s' % s[j:i])
                 new_txt.append(r"$$"),
                 new_txt.append(refine(s[j: i]))
-                new_txt.append(r"$$")    # 更改定界符
+                new_txt.append(r"$$")  # 更改定界符
                 # skip the second close dollar
                 i += 1
         elif stack == 0:

@@ -1,5 +1,6 @@
-from function import replace_dollar_tex
 import pyperclip
+
+from function import replace_dollar_tex
 
 l = pyperclip.paste()
 l = "".join(l)  # 得到一串

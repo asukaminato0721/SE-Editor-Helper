@@ -1,4 +1,5 @@
-from ciku import new, aim
+from ciku import aim, new
+
 
 # 几个案例：
 
@@ -8,7 +9,7 @@ from ciku import new, aim
 def 处理(s: str) -> str:
     l = len(new)
     temp = s
-  #  temp = temp.replace(r"\\", r"\\ ")
+    #  temp = temp.replace(r"\\", r"\\ ")
     for i in range(l):
         temp = temp.replace(aim[i], new[i])
 
@@ -28,12 +29,12 @@ def mark(st: str) -> list:
         while pos != -1:
             pos = s[j:].find(i) + j
             if 1 not in record[pos: pos + len(i)]:
-                record[pos: pos + len(i)] = [1]*len(i)  # 在对应位置记录
+                record[pos: pos + len(i)] = [1] * len(i)  # 在对应位置记录
             j += len(i)
             pos = s[j:].find(i)
             if pos == -1:
                 break
-            if j+len(i) >= l:
+            if j + len(i) >= l:
                 break
             pos = s[j:].find(i)
     return record
@@ -56,7 +57,6 @@ def refine(st: str):  # 完成
     if l[0] == 1:
         result.insert(0, "\\")
     return "".join(result)
-
 
 # s = r"tanhx+sint"
 # print(refine(s))

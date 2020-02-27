@@ -1,7 +1,11 @@
 # -*- coding: UTF-8 -*-
 import re
+
 import pyperclip
+
 from rules import repl  # 导入替换规则
+
+
 # 导入库
 
 
@@ -21,7 +25,6 @@ l = "".join(l)  # 得到一串
 pattern = re.compile("\$.*?\$")  # 匹配 $XXX$ 的
 p = re.sub(pattern, f, l)
 l = "".join(p)
-
 
 pattern = re.compile("\$\$.*?\$\$")  # 匹配单行 $$XXX$$ 的
 p = re.sub(pattern, f, l)

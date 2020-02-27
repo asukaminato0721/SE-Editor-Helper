@@ -1,4 +1,3 @@
-import re
 from refine import refine
 
 
@@ -32,7 +31,7 @@ def replace_dollar_tex(s):
                     # print('single: %s' % s[j:i])
                     new_txt.append(r"$"),
                     new_txt.append(refine(s[j:i]))
-                    new_txt.append(r"$")    # 更改定界符
+                    new_txt.append(r"$")  # 更改定界符
             else:  # stack == 2
                 # first close dollar
                 stack = 0
@@ -56,7 +55,6 @@ def replace_dollar_tex(s):
 
 
 replace_dollar_tex("$tanx+tanhx+cosx+coshx$")
-
 
 # def replace_inline_tex(s):
 #     # replace '\\( * \\)'
