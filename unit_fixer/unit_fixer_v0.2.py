@@ -3,7 +3,7 @@
 Created on 2020/2/23 21:06
 版权所有（c）<2020> 11598
 github:https://github.com/HydrogenDeuterium
-使用正则替换来解决类似mmHg生成\mathrm{\mathrm{mm}Hg}的问题
+使用正则替换来解决类似 mmHg 生成 \mathrm{mmHg} 的问题
 """
 
 import re
